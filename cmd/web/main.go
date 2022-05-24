@@ -36,11 +36,23 @@ func main() {
 	mux.HandleFunc("/OfflineWAN3", handlers.OfflineWAN3)
 	mux.HandleFunc("/OfflineIPSEC", handlers.OfflineIPSEC)
 
+	mux.HandleFunc("/PostOfflineRTR", handlers.PostOfflineRTR)
+	mux.HandleFunc("/PostOfflineASTC", handlers.PostOfflineASTC)
+	mux.HandleFunc("/PostOfflineWAN2", handlers.PostOfflineWAN2)
+	mux.HandleFunc("/PostOfflineWAN3", handlers.PostOfflineWAN3)
+	mux.HandleFunc("/PostOfflineIPSEC", handlers.PostOfflineIPSEC)
+
 	mux.HandleFunc("/BouncingRTR", handlers.BouncingRTR)
 	mux.HandleFunc("/BouncingASTC", handlers.BouncingASTC)
 	mux.HandleFunc("/BouncingWAN2", handlers.BouncingWAN2)
 	mux.HandleFunc("/BouncingWAN3", handlers.BouncingWAN3)
 	mux.HandleFunc("/BouncingIPSEC", handlers.BouncingIPSEC)
+
+	mux.HandleFunc("/PostBouncingRTR", handlers.PostBouncingRTR)
+	mux.HandleFunc("/PostBouncingASTC", handlers.PostBouncingASTC)
+	mux.HandleFunc("/PostBouncingWAN2", handlers.PostBouncingWAN2)
+	mux.HandleFunc("/PostBouncingWAN3", handlers.PostBouncingWAN3)
+	mux.HandleFunc("/PostBouncingIPSEC", handlers.PostBouncingIPSEC)
 
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))

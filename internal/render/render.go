@@ -3,6 +3,7 @@ package render
 import (
 	"bytes"
 	"fmt"
+	"github.com/raunchers/workAutomation/pkg/models"
 	"html/template"
 	"log"
 	"net/http"
@@ -31,6 +32,31 @@ func RenTemplate(w http.ResponseWriter, tmpl string) {
 
 	// take template, execute, don't pass any data and store in buf variable
 	_ = t.Execute(buf, nil)
+
+	_, err = buf.WriteTo(w)
+	if err != nil {
+		fmt.Println("Error writing template,", err)
+	}
+}
+
+func RenTicketTemplate(w http.ResponseWriter, tmpl string, info models.Update) {
+
+	tc, err := CreateTemplateCache()
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// If template exist, t has a value and ok == true
+	t, ok := tc[tmpl]
+	if !ok {
+		log.Fatalln(err)
+	}
+
+	// bytes buffer
+	buf := new(bytes.Buffer)
+
+	// take template, execute, don't pass any data and store in buf variable
+	_ = t.Execute(buf, info)
 
 	_, err = buf.WriteTo(w)
 	if err != nil {
