@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"github.com/raunchers/workAutomation/internal/render"
 	"github.com/raunchers/workAutomation/pkg/models"
 	"net/http"
@@ -63,16 +62,12 @@ func PostOfflineRTR(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostOfflineASTC(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing ASTC ticket...")
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
-
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
 
 	render.RenTicketTemplate(w, "OffASTC.page.tmpl", info)
 }
@@ -89,6 +84,7 @@ func PostOfflineWAN2(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostOfflineWAN3(w http.ResponseWriter, r *http.Request) {
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
@@ -99,6 +95,7 @@ func PostOfflineWAN3(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostOfflineIPSEC(w http.ResponseWriter, r *http.Request) {
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
@@ -120,6 +117,7 @@ func PostBouncingRTR(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostBouncingASTC(w http.ResponseWriter, r *http.Request) {
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
@@ -130,6 +128,7 @@ func PostBouncingASTC(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostBouncingWAN2(w http.ResponseWriter, r *http.Request) {
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
@@ -140,6 +139,7 @@ func PostBouncingWAN2(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostBouncingWAN3(w http.ResponseWriter, r *http.Request) {
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
@@ -150,6 +150,7 @@ func PostBouncingWAN3(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostBouncingIPSEC(w http.ResponseWriter, r *http.Request) {
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
