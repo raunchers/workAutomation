@@ -1,0 +1,24 @@
+*******
+*TO DO*
+*******
+
+Design each template page for every issue
+    Need to add DRM Input field for the following:
+        offline WAN 2
+        offline WAN 3
+        offline IPSEC
+
+Add post handlers for all issues
+        offline RTR
+        offline ASTC
+        offline WAN 2
+        offline WAN 3
+        offline IPSEC
+        bouncing RTR
+        bouncing ASTC
+        bouncing WAN 2
+        bouncing WAN 3
+        bouncing IPSEC
+
+Correct html form field action to the correct page for each page
+

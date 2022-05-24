@@ -1,0 +1,50 @@
+{{define "base"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        {{block "css" .}}
+
+        {{end}}
+
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">GLS</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Issue
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" id="OfflineRTR" href="/OfflineRTR">Offline RTR</a></li>
+                                <li><a class="dropdown-item" id="OfflineASTC" href="/OfflineASTC">Offline ASTC</a></li>
+                                <li><a class="dropdown-item" id="OfflineWAN2" href="/OfflineWAN2">Offline WAN 2</a></li>
+                                <li><a class="dropdown-item" id="OfflineWAN3" href="/OfflineWAN3">Offline WAN 3</a></li>
+                                <li><a class="dropdown-item" id="OfflineIPSEC" href="/OfflineIPSEC">Offline IPSEC</a></li>
+                                <li><a class="dropdown-item" id="BouncingRTR" href="/BouncingRTR">Bouncing RTR</a></li>
+                                <li><a class="dropdown-item" id="BouncingASTC" href="/BouncingASTC">Bouncing ASTC</a></li>
+                                <li><a class="dropdown-item" id="BouncingWAN2" href="/BouncingWAN2">Bouncing WAN2</a></li>
+                                <li><a class="dropdown-item" id="BouncingWAN3" href="/BouncingWAN3">Bouncing WAN3</a></li>
+                                <li><a class="dropdown-item" id="BouncingIPSEC" href="/BouncingIPSEC">Bouncing IPSEC</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {{block "content" .}}
+
+        {{end}}
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        {{block "js" .}}
+
+        {{end}}
+    </body>
+    </html>
+{{end}}

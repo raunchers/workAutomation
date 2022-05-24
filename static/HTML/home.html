@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form name="equipment_choice">
+                    <label for="equipment">Alarm:</label>
+                    <select name="equipment" id="equipment" onchange="go()">
+                        <option value="Router">Choose Equipment</option>
+                        <option value="Router">Router</option>
+                        <option value="ASTC">ASTC</option>
+                        <option value="WAN2">WAN 2</option>
+                        <option value="WAN3">WAN 3</option>
+                        <option value="IPSEC">IPSEC</option>
+                        <option value="Temp">Temp</option>
+                        <option value="CPU">CPU</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function go(){
+            let menu = document.getElementById("equipment");
+            let selection = menu.options[menu.selectedIndex].value;
+            console.log(selection)
+        }
+    </script>
+</body>
+</html>
