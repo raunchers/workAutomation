@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-const portNumber = ":8080"
+const portNumber = ":8000"
 
 var sessionManager *scs.SessionManager
 
