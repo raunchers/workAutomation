@@ -1,1 +1,1 @@
-web: ./cmd/web/.
+web: workautomation-app
