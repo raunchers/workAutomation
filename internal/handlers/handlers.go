@@ -78,42 +78,34 @@ func PostOfflineASTC(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostOfflineWAN2(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing WAN 2 ticket...")
+
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
+	render.RenTicketTemplate(w, "OffWAN2.page.tmpl", info)
 }
 
 func PostOfflineWAN3(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing WAN 3 ticket...")
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
+	render.RenTicketTemplate(w, "OffWAN3.page.tmpl", info)
 }
 
 func PostOfflineIPSEC(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing IPSEC ticket...")
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
+	render.RenTicketTemplate(w, "OffIPSEC.page.tmpl", info)
 }
 
 func PostBouncingRTR(w http.ResponseWriter, r *http.Request) {
@@ -124,63 +116,45 @@ func PostBouncingRTR(w http.ResponseWriter, r *http.Request) {
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
-
 	render.RenTicketTemplate(w, "bounceRTR.page.tmpl", info)
 }
 
 func PostBouncingASTC(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing Bouncing ASTC ticket...")
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
-
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
 
 	render.RenTicketTemplate(w, "bounceASTC.page.tmpl", info)
 }
 
 func PostBouncingWAN2(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing Bouncing WAN 2 ticket...")
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
+	render.RenTicketTemplate(w, "bounceWAN2.page.tmpl", info)
 }
 
 func PostBouncingWAN3(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing Bouncing WAN 3 ticket...")
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
+	render.RenTicketTemplate(w, "bounceWAN3.page.tmpl", info)
 }
 
 func PostBouncingIPSEC(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Processing Bouncing IPSEC ticket...")
 	var info models.Update
 
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
 
-	fmt.Printf("%v\n", info.Alarm)
-	fmt.Printf("%v\n", info.HexID)
-	fmt.Printf("%v\n", info.TicketNumber)
+	render.RenTicketTemplate(w, "bounceIPSEC.page.tmpl", info)
 }
