@@ -79,6 +79,7 @@ func PostOfflineWAN2(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "OffWAN2.page.tmpl", info)
 }
@@ -90,6 +91,7 @@ func PostOfflineWAN3(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "OffWAN3.page.tmpl", info)
 }
@@ -101,6 +103,7 @@ func PostOfflineIPSEC(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "OffIPSEC.page.tmpl", info)
 }
