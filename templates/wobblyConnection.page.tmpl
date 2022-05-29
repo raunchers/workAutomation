@@ -1,0 +1,37 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="row">
+        <div class="col">
+            <p>
+                ==============<br>
+                DRM Information<br>
+                \==============<br>
+                <br>
+                <pre>{{.DRMInfo}}</pre>
+                <br>
+                =====================<br>
+                Current Actions Taken<br>
+                \=====================<br>
+                <br>
+                DRM is showing a wobbly connection alarm. Setting the ticket out to<br>
+                monitor the stability of the connection.<br>
+                <br>
+                Check Ethernet Settings: Y<br>
+                Check Cellular Settings: Y<br>
+                Check Cellular Issues: Y<br>
+                Check IPsec Issues: Y<br>
+                Check SCEP Issues: Y<br>
+                Check Configuration Files: Y<br>
+                Carrier Issues Found: Y<br>
+                Has DOT performed a soft reboot: N<br>
+                <br>
+                ===========<br>
+                Next Action<br>
+                \===========<br>
+                <br>
+                Close if stable. <br>
+                <br>
+            </p>
+        </div>
+    </div>
+{{end}}

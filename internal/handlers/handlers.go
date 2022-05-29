@@ -50,6 +50,39 @@ func BouncingIPSEC(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "bouncingIPSEC.page.tmpl")
 }
 
+func RestoredRTR(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredRTRASTC.page.tmpl")
+}
+
+func RestoredASTC(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredRTRASTC.page.tmpl")
+}
+
+func RestoredWAN2(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
+}
+
+func RestoredWAN3(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
+}
+
+func RestoredIPSEC(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
+}
+
+func Wobbly(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "wobbly.page.tmpl")
+}
+
+func PostWobbly(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "wobblyConnection.page.tmpl", info)
+}
+
 func PostOfflineRTR(w http.ResponseWriter, r *http.Request) {
 
 	var info models.Update
@@ -161,26 +194,6 @@ func PostBouncingIPSEC(w http.ResponseWriter, r *http.Request) {
 	info.TicketNumber = r.FormValue("TicketNumber")
 
 	render.RenTicketTemplate(w, "bounceIPSEC.page.tmpl", info)
-}
-
-func RestoredRTR(w http.ResponseWriter, r *http.Request) {
-	render.RenTemplate(w, "restoredRTRASTC.page.tmpl")
-}
-
-func RestoredASTC(w http.ResponseWriter, r *http.Request) {
-	render.RenTemplate(w, "restoredRTRASTC.page.tmpl")
-}
-
-func RestoredWAN2(w http.ResponseWriter, r *http.Request) {
-	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
-}
-
-func RestoredWAN3(w http.ResponseWriter, r *http.Request) {
-	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
-}
-
-func RestoredIPSEC(w http.ResponseWriter, r *http.Request) {
-	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
 }
 
 func PostRestoredRTR(w http.ResponseWriter, r *http.Request) {

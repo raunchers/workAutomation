@@ -64,6 +64,10 @@ func main() {
 	mux.HandleFunc("/PostRestoredASTC", handlers.PostRestoredASTC)
 	mux.HandleFunc("/PostRestoredWANIPSEC", handlers.PostRestoredWANIPSEC)
 
+	mux.HandleFunc("/Wobbly", handlers.Wobbly)
+
+	mux.HandleFunc("/PostWobbly", handlers.PostWobbly)
+
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))
 }
