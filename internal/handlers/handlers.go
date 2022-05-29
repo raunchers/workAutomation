@@ -162,3 +162,50 @@ func PostBouncingIPSEC(w http.ResponseWriter, r *http.Request) {
 
 	render.RenTicketTemplate(w, "bounceIPSEC.page.tmpl", info)
 }
+
+func RestoredRTR(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredRTRASTC.page.tmpl")
+}
+
+func RestoredASTC(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredRTRASTC.page.tmpl")
+}
+
+func RestoredWAN2(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
+}
+
+func RestoredWAN3(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
+}
+
+func RestoredIPSEC(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "restoredWANIPSEC.page.tmpl")
+}
+
+func PostRestoredRTR(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "restoreRTRASTC.page.tmpl", info)
+}
+
+func PostRestoredASTC(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "restoreRTRASTC.page.tmpl", info)
+}
+
+func PostRestoredWANIPSEC(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "restoreWANIPSEC.page.tmpl", info)
+}

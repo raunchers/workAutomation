@@ -54,6 +54,16 @@ func main() {
 	mux.HandleFunc("/PostBouncingWAN3", handlers.PostBouncingWAN3)
 	mux.HandleFunc("/PostBouncingIPSEC", handlers.PostBouncingIPSEC)
 
+	mux.HandleFunc("/RestoredRTR", handlers.RestoredRTR)
+	mux.HandleFunc("/RestoredASTC", handlers.RestoredASTC)
+	mux.HandleFunc("/RestoredWAN2", handlers.RestoredWAN2)
+	mux.HandleFunc("/RestoredWAN3", handlers.RestoredWAN3)
+	mux.HandleFunc("/RestoredIPSEC", handlers.RestoredIPSEC)
+
+	mux.HandleFunc("/PostRestoredRTRASTC", handlers.PostRestoredRTR)
+	mux.HandleFunc("/PostRestoredASTC", handlers.PostRestoredASTC)
+	mux.HandleFunc("/PostRestoredWANIPSEC", handlers.PostRestoredWANIPSEC)
+
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))
 }
