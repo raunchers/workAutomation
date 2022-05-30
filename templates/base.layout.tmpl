@@ -11,93 +11,69 @@
 
     </head>
     <body>
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">GLS</span>
-                    </a>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link align-middle px-0">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Equipment Offline</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="/OfflineRTR" class="nav-link px-0"> <span class="d-none d-sm-inline">Router</span></a>
-                                </li>
-                                <li>
-                                    <a href="/OfflineASTC" class="nav-link px-0"> <span class="d-none d-sm-inline">ASTC</span></a>
-                                </li>
-                                <li>
-                                    <a href="/OfflineWAN2" class="nav-link px-0"> <span class="d-none d-sm-inline">WAN 2</span></a>
-                                </li>
-                                <li>
-                                    <a href="/OfflineWAN3" class="nav-link px-0"> <span class="d-none d-sm-inline">WAN 3</span></a>
-                                </li>
-                                <li>
-                                    <a href="/OfflineIPSEC" class="nav-link px-0"> <span class="d-none d-sm-inline">IPSEC Tunnel</span></a>
-                                </li>
-                            </ul>
-
-                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Equipment Bouncing</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="/BouncingRTR" class="nav-link px-0"> <span class="d-none d-sm-inline">Router</span></a>
-                                </li>
-                                <li>
-                                    <a href="/BouncingASTC" class="nav-link px-0"> <span class="d-none d-sm-inline">ASTC</span></a>
-                                </li>
-                                <li>
-                                    <a href="/BouncingWAN2" class="nav-link px-0"> <span class="d-none d-sm-inline">WAN 2</span></a>
-                                </li>
-                                <li>
-                                    <a href="/BouncingWAN3" class="nav-link px-0"> <span class="d-none d-sm-inline">WAN 3</span></a>
-                                </li>
-                                <li>
-                                    <a href="/BouncingIPSEC" class="nav-link px-0"> <span class="d-none d-sm-inline">IPSEC Tunnel</span></a>
-                                </li>
-                            </ul>
-
-                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Equipment Restored</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="/RestoredRTR" class="nav-link px-0"> <span class="d-none d-sm-inline">Router</span></a>
-                                </li>
-                                <li>
-                                    <a href="/RestoredASTC" class="nav-link px-0"> <span class="d-none d-sm-inline">ASTC</span></a>
-                                </li>
-                                <li>
-                                    <a href="/RestoredWAN2" class="nav-link px-0"> <span class="d-none d-sm-inline">WAN 2</span></a>
-                                </li>
-                                <li>
-                                    <a href="/RestoredWAN3" class="nav-link px-0"> <span class="d-none d-sm-inline">WAN 3</span></a>
-                                </li>
-                                <li>
-                                    <a href="/RestoredIPSEC" class="nav-link px-0"> <span class="d-none d-sm-inline">IPSEC Tunnel</span></a>
-                                </li>
-                            </ul>
-
-                            <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Wobbly Connections</span> </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="/Wobbly" class="nav-link px-0"> <span class="d-none d-sm-inline">DRM Wobbly Connection</span></a>
-                                </li>
-                            </ul>
-
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">GLS</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Equipment Offline
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/OfflineRTR">Router</a></li>
+                            <li><a class="dropdown-item" href="/OfflineASTC">ASTC</a></li>
+                            <li><a class="dropdown-item" href="/OfflineWAN2">WAN 2</a></li>
+                            <li><a class="dropdown-item" href="/OfflineWAN3">WAN 3</a></li>
+                            <li><a class="dropdown-item" href="/OfflineIPSEC">IPSEC Tunnel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Equipment Bouncing
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/BouncingRTR">Router</a></li>
+                            <li><a class="dropdown-item" href="/BouncingASTC">ASTC</a></li>
+                            <li><a class="dropdown-item" href="/BouncingWAN2">WAN 2</a></li>
+                            <li><a class="dropdown-item" href="/BouncingWAN3">WAN 3</a></li>
+                            <li><a class="dropdown-item" href="/BouncingIPSEC">IPSEC Tunnel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Equipment Restored
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/RestoredRTR">Router</a></li>
+                            <li><a class="dropdown-item" href="/RestoredASTC">ASTC</a></li>
+                            <li><a class="dropdown-item" href="/RestoredWAN2">WAN 2</a></li>
+                            <li><a class="dropdown-item" href="/RestoredWAN3">WAN 3</a></li>
+                            <li><a class="dropdown-item" href="/RestoredIPSEC">IPSEC Tunnel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Misc
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/">CPU Alarm</a></li>
+                            <li><a class="dropdown-item" href="/">Temperature Alarm</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="col py-3">
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
                 {{block "content" .}}
 
                 {{end}}
