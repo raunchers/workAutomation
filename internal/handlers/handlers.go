@@ -90,6 +90,7 @@ func PostOfflineRTR(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "OffRTR.page.tmpl", info)
 }
