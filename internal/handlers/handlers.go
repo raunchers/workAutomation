@@ -171,6 +171,7 @@ func PostBouncingWAN2(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "bounceWAN2.page.tmpl", info)
 }
@@ -182,6 +183,7 @@ func PostBouncingWAN3(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "bounceWAN3.page.tmpl", info)
 }
@@ -193,6 +195,7 @@ func PostBouncingIPSEC(w http.ResponseWriter, r *http.Request) {
 	info.Alarm = r.FormValue("Alarm")
 	info.HexID = r.FormValue("HexID")
 	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
 
 	render.RenTicketTemplate(w, "bounceIPSEC.page.tmpl", info)
 }

@@ -13,6 +13,12 @@
                 <br>
                 Current Alarm(s): {{.Alarm}} <br>
                 <br>
+                ===============<br>
+                DRM Information<br>
+                \===============<br>
+                <br>
+                <pre>{{.DRMInfo}}</pre>
+                <br>
                 ================= <br>
                 TMC Engaged: Yes <br>
                 \================= <br>
@@ -39,7 +45,8 @@
             <div class="col">
                 <p>
                     Good evening,<br>
-                    the IPSEC tunnel is bouncing for site {{.HexID}}. Could you remotely reboot the router?
+                    the IPSEC tunnel is bouncing for site {{.HexID}}. Could you remotely reboot the router?<br>
+                    <pre>{{.DRMInfo}}</pre>
                 </p>
             </div>
         </div>
