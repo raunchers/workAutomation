@@ -74,6 +74,64 @@ func Wobbly(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "wobbly.page.tmpl")
 }
 
+func CPUAlarm(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "cpuAlarm.page.tmpl")
+}
+
+func TempAlarm(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "tempAlarm.page.tmpl")
+}
+
+func CPUClear(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "cpu.page.tmpl")
+}
+
+func TempClear(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "temp.page.tmpl")
+}
+
+func PostTempAlarm(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.Alarm = r.FormValue("Alarm")
+	info.HexID = r.FormValue("HexID")
+	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "tempHigh.page.tmpl", info)
+}
+
+func PostcpuClear(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "cpuClear.page.tmpl", info)
+}
+
+func PosttempClear(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "tempClear.page.tmpl", info)
+}
+
+func PostCPUAlarm(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.Alarm = r.FormValue("Alarm")
+	info.HexID = r.FormValue("HexID")
+	info.TicketNumber = r.FormValue("TicketNumber")
+	info.DRMInfo = r.FormValue("DRMInfo")
+
+	render.RenTicketTemplate(w, "cpuHigh.page.tmpl", info)
+}
+
 func PostWobbly(w http.ResponseWriter, r *http.Request) {
 
 	var info models.Update

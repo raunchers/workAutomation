@@ -68,6 +68,18 @@ func main() {
 
 	mux.HandleFunc("/PostWobbly", handlers.PostWobbly)
 
+	mux.HandleFunc("/cpuAlarm", handlers.CPUAlarm)
+	mux.HandleFunc("/tempAlarm", handlers.TempAlarm)
+
+	mux.HandleFunc("/PostCPUAlarm", handlers.PostCPUAlarm)
+	mux.HandleFunc("/PostTempAlarm", handlers.PostTempAlarm)
+
+	mux.HandleFunc("/CPUClear", handlers.CPUClear)
+	mux.HandleFunc("/TempClear", handlers.TempClear)
+
+	mux.HandleFunc("/PostcpuClear", handlers.PostcpuClear)
+	mux.HandleFunc("/PosttempClear", handlers.PosttempClear)
+
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))
 }

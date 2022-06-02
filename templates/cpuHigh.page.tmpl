@@ -1,0 +1,56 @@
+{{template "base" .}}
+{{define "content"}}
+
+    <div class="container">
+
+        <p>
+            ===================== <br>
+            GLS Alarm Information <br>
+            \===================== <br>
+            <br>
+            Site Hard Down: No <br>
+            <br>
+            Equipment in Alarm: RTR <br>
+            <br>
+            Current Alarm(s): {{.Alarm}} <br>
+            <br>
+            ===============<br>
+            DRM Information<br>
+            \===============<br>
+            <br>
+        <pre>{{.DRMInfo}}</pre>
+        <br>
+        ================= <br>
+        TMC Engaged: Yes <br>
+        \================= <br>
+        <br>
+        TMC TT#: Pending <br>
+        <br>
+        TMC Email String: NYCDOT HEX {{.HexID}} | GLS TT#{{.TicketNumber}} | High CPU Load<br>
+        <br>
+        ===================== <br>
+        Current Actions Taken <br>
+        \===================== <br>
+        <br>
+        CPU load is above 90%. I emailed TMC requesting a remote reboot. <br>
+        <br>
+        =========== <br>
+        Next Action <br>
+        \=========== <br>
+        <br>
+        Monitor the email string for updates. Request updates when necessary.
+        </p>
+
+        <hr class="border-5 border-top">
+        <div class="row">
+            <div class="col">
+                <p>
+                    Good evening,<br>
+                    Site {{.HexID}} is showing high CPU load. Could you remotely reboot the router?
+                <pre>{{.DRMInfo}}</pre>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{{end}}
