@@ -54,11 +54,11 @@ func main() {
 	mux.HandleFunc("/PostBouncingWAN3", handlers.PostBouncingWAN3)
 	mux.HandleFunc("/PostBouncingIPSEC", handlers.PostBouncingIPSEC)
 
-	mux.HandleFunc("/RestoredRTR", handlers.RestoredRTR)
-	mux.HandleFunc("/RestoredASTC", handlers.RestoredASTC)
-	mux.HandleFunc("/RestoredWAN2", handlers.RestoredWAN2)
-	mux.HandleFunc("/RestoredWAN3", handlers.RestoredWAN3)
-	mux.HandleFunc("/RestoredIPSEC", handlers.RestoredIPSEC)
+	mux.HandleFunc("/RestoredRTR", handlers.RestoredRTRASTC)
+	mux.HandleFunc("/RestoredASTC", handlers.RestoredRTRASTC)
+	mux.HandleFunc("/RestoredWAN2", handlers.RestoredWANIPSEC)
+	mux.HandleFunc("/RestoredWAN3", handlers.RestoredWANIPSEC)
+	mux.HandleFunc("/RestoredIPSEC", handlers.RestoredWANIPSEC)
 
 	mux.HandleFunc("/PostRestoredRTRASTC", handlers.PostRestoredRTR)
 	mux.HandleFunc("/PostRestoredASTC", handlers.PostRestoredASTC)
