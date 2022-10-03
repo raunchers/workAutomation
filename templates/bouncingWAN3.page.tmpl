@@ -4,29 +4,17 @@
         <div class="row">
             <div class="col">
                 <form action="/PostBouncingWAN3" method="get">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Alarm</span>
-                        <div class="col-sm-2">
-                            <input type="text" class="form-control" name="Alarm">
-                        </div>
-                    </div >
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">HEX ID</span>
-                        <div class="col-sm-2">
-                            <input type="text" class="form-control" name="HexID">
-                        </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupAlarm" placeholder="Alarm" name="Alarm">
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Ticket Number</span>
-                        <div class="col-sm-2">
-                            <input type="text" class="form-control" name="TicketNumber">
-                        </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupHex" placeholder="Hex ID" name="HexID">
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">DRM Output</span>
-                        <div class="col-sm-2">
-                            <textarea class="form-control" name="DRMInfo"></textarea>
-                        </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupTicket" placeholder="Ticket Number" name="TicketNumber">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="DRMInfo" id="formGroupDRM" placeholder="DRM Output" cols="70"></textarea>
                     </div>
                     <button class="btn btn-primary" type="submit">Submit</button>
                 </form>
