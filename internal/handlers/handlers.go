@@ -96,6 +96,25 @@ func TempClear(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "temp.page.tmpl")
 }
 
+func ATTTemplate(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "at&tTemplate.page.tmpl")
+}
+
+// PostATTTemplate parse data from AT&T template page, render the AT&T ticket with the correct info
+func PostATTTemplate(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.TicketNumber = r.FormValue("TicketNumber")
+	info.ICCID = r.FormValue("ICCID")
+	info.Address = r.FormValue("Address")
+	info.Region = r.FormValue("Region")
+	info.IssueStartDateTime = r.FormValue("IssueStartDateTime")
+	info.Description = r.FormValue("Description")
+
+	render.RenTicketTemplate(w, "at&tTicket.page.tmpl", info)
+}
+
 // PostTempAlarm parse data from temp alarm page, render temp alarm ticket template with correct info
 func PostTempAlarm(w http.ResponseWriter, r *http.Request) {
 

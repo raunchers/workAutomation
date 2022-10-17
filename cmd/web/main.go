@@ -80,6 +80,9 @@ func main() {
 	mux.HandleFunc("/PostcpuClear", handlers.PostcpuClear)
 	mux.HandleFunc("/PosttempClear", handlers.PosttempClear)
 
+	mux.HandleFunc("/AT&TTemplate", handlers.ATTTemplate)
+	mux.HandleFunc("/PostATTTemplate", handlers.PostATTTemplate)
+
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))
 }
