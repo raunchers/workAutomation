@@ -1,0 +1,30 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="/PostATTTemplate" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupTicket" placeholder="Ticket Number" name="TicketNumber">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupICCID" placeholder="ICCID" name="ICCID">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control"  id="formGroupAddress" placeholder="Address" name="Address"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupRegion" placeholder="Region" name="Region">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupIssueStart" placeholder="Issue Start Date and Time" name="IssueStartDateTime">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control"  id="formGroupDescription" placeholder="" name="Description">Connection went down, customer remotely rebooted the router and the connection went back offline. The latest bounce was at 04:29:33 pm EST.</textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{end}}

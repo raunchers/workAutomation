@@ -1,0 +1,39 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="container">
+        Please do NOT contact Joe Deker<br>
+        <br>
+        Account Name: GLS NOC on behalf of NYDOT<br>
+        <br>
+        Primary Contact Person: GLS NOC<br>
+        <br>
+        Primary Contact Phone: (888) 800-3769<br>
+        <br>
+        Primary Contact Email: nycdotnoc@gls.com<br>
+        <br>
+        GLS Ticket# {{.TicketNumber}}<br>
+        <br>
+        Please list impacted mobiles (MSISDN | ICCID): {{.ICCID}}<br>
+        <br>
+        Address or Cross-Streets where kit is located:<br>
+        <pre>{{.Address}}</pre>
+        <br>
+        Region: {{.Region}}<br>
+        <br>
+        When did the problem begin? (Date | Time): {{.IssueStartDateTime}}<br>
+        <br>
+        Additional Support info: MyCSP *762473<br>
+        <br>
+        Detailed Problem Description:<br>
+        <br>
+        This is a cabinet on the street corner that controls lights/cameras at the intersection; this the only unit at this particular cross-street therefore stare & compare nor SIM swap are an option;<br>
+        <br>
+        There is a Dual SIM DIGI device in the cabinet; AT&T is primary; Sprint is Secondary:<br>
+        <br>
+        https://www.digi.com/products/models/wr54-a246<br>
+        <br>
+        Please vet the network/Macro for fault; If there is no network trouble/outage found to causing device issue, GLS will advise NYCDOT to roll a truck to swap out the device.<br>
+        <br>
+        Description: {{.Description}}<br>
+    </div>
+{{end}}
