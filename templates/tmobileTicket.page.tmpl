@@ -1,0 +1,45 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="container">
+        Issue: {{.Description}}<br>
+        <br>
+        Device Power cycle/Reboot Completed: Remotely Rebooted<br>
+        <br>
+        Number of impacted SIMs: 1<br>
+        <br>
+        Impacted ICCID(s) (Please include all impacted ICCIDs): {{.ICCID}}<br>
+        <br>
+        Impacted IMSI(s): {{.IMSI}}<br>
+        <br>
+        Last time the device successfully connected: {{.LastConnect}}<br>
+        <br>
+        Did SIM connect at the same location?  Yes<br>
+        <br>
+        When did the issue begin (Eastern Time)? {{.IssueStartDateTime}}<br>
+        <br>
+        Signal Strength (RSRP): {{.SignalStrength}}<br>
+        <br>
+        Signal Quality (RSRQ): {{.SignalQuality}}<br>
+        <br>
+        Latency: {{.Latency}}<br>
+        <br>
+        Have any changes been made to the device (including software updates): No<br>
+        <br>
+        Is Device Mobile or Stationery: Stationery<br>
+        <br>
+        Device model: Digi WR54-A246-DOT, with Sierra Wireless EM7511 cellular radio.<br>
+        <br>
+        Primary Contact Email: nycdotnoc@gls.com<br>
+        <br>
+        GLS Ticket: {{.TicketNumber}}<br>
+        <br>
+        Problem Location:<br>
+        <pre>Address: {{.Address}}</pre>
+        <br>
+        City: New York City<br>
+        <br>
+        State: NY<br>
+        <br>
+        Zip: {{.ZipCode}}
+    </div>
+{{end}}

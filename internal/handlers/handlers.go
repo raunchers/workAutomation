@@ -100,6 +100,30 @@ func ATTTemplate(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "at&tTemplate.page.tmpl")
 }
 
+func TMobileTemplate(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "tmobileTemplate.page.tmpl")
+}
+
+// PostTMobileTemplate parse data from T-Mobile template page, render the T-Mobile ticket with the correct info
+func PostTMobileTemplate(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.Description = r.FormValue("Description")
+	info.ICCID = r.FormValue("ICCID")
+	info.IMSI = r.FormValue("IMSI")
+	info.LastConnect = r.FormValue("LastConnect")
+	info.IssueStartDateTime = r.FormValue("IssueStartDateTime")
+	info.SignalStrength = r.FormValue("SignalStrength")
+	info.SignalQuality = r.FormValue("SignalQuality")
+	info.Latency = r.FormValue("Latency")
+	info.TicketNumber = r.FormValue("TicketNumber")
+	info.Address = r.FormValue("Address")
+	info.ZipCode = r.FormValue("ZipCode")
+
+	render.RenTicketTemplate(w, "tmobileTicket.page.tmpl", info)
+}
+
 // PostATTTemplate parse data from AT&T template page, render the AT&T ticket with the correct info
 func PostATTTemplate(w http.ResponseWriter, r *http.Request) {
 

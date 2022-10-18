@@ -83,6 +83,9 @@ func main() {
 	mux.HandleFunc("/AT&TTemplate", handlers.ATTTemplate)
 	mux.HandleFunc("/PostATTTemplate", handlers.PostATTTemplate)
 
+	mux.HandleFunc("/TMobileTemplate", handlers.TMobileTemplate)
+	mux.HandleFunc("/PostTMobileTemplate", handlers.PostTMobileTemplate)
+
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))
 }
