@@ -1,0 +1,47 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="container">
+
+        <p>
+            ===================== <br>
+            GLS Alarm Information <br>
+            \===================== <br>
+            <br>
+            Site Hard Down: No <br>
+            <br>
+            Equipment in Alarm: RTR <br>
+            <br>
+            Current Alarm(s): {{.Alarm}} <br>
+            <br>
+        ================= <br>
+        TMC Engaged: Yes <br>
+        \================= <br>
+        <br>
+        TMC TT#: Pending <br>
+        <br>
+        TMC Email String: NYCDOT HEX {{.HexID}} | GLS TT#{{.TicketNumber}} | WAN Metrics<br>
+        <br>
+        ===================== <br>
+        Current Actions Taken <br>
+        \===================== <br>
+        <br>
+        The WAN metrics are an hour behind. I emailed TMC requesting they remotely reboot the router. <br>
+        <br>
+        =========== <br>
+        Next Action <br>
+        \=========== <br>
+        <br>
+        Monitor the email string for updates. Request updates when necessary.
+        </p>
+
+        <hr class="border-5 border-top">
+        <div class="row">
+            <div class="col">
+                <p>
+                    Good evening,<br>
+                    The WAN metrics are an hour behind for site {{.HexID}}. Could you remotely reboot the router?
+                </p>
+            </div>
+        </div>
+    </div>
+{{end}}

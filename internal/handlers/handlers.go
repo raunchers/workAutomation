@@ -96,12 +96,31 @@ func TempClear(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "temp.page.tmpl")
 }
 
+// ATTTemplate render the page for the AT&T ticket template
 func ATTTemplate(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "at&tTemplate.page.tmpl")
 }
 
+// TMobileTemplate render the page for the T-Mobile ticket template
 func TMobileTemplate(w http.ResponseWriter, r *http.Request) {
 	render.RenTemplate(w, "tmobileTemplate.page.tmpl")
+}
+
+// WanMetricsTemplate render the page for the WAN metrics being an hour behind
+func WanMetricsTemplate(w http.ResponseWriter, r *http.Request) {
+	render.RenTemplate(w, "wanMetricsTemplate.page.tmpl")
+}
+
+// PostWanMetrics parse data from wanMetrics alarm page, render wanMetrics ticket template with correct info
+func PostWanMetrics(w http.ResponseWriter, r *http.Request) {
+
+	var info models.Update
+
+	info.Alarm = r.FormValue("Alarm")
+	info.HexID = r.FormValue("HexID")
+	info.TicketNumber = r.FormValue("TicketNumber")
+
+	render.RenTicketTemplate(w, "wanMetrics.page.tmpl", info)
 }
 
 // PostTMobileTemplate parse data from T-Mobile template page, render the T-Mobile ticket with the correct info

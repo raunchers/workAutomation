@@ -1,0 +1,21 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="/PostWanMetrics" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupAlarm" placeholder="Alarm" name="Alarm">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupHex" placeholder="Hex ID" name="HexID">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="formGroupTicket" placeholder="Ticket Number" name="TicketNumber">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{end}}

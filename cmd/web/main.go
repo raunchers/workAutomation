@@ -65,7 +65,6 @@ func main() {
 	mux.HandleFunc("/PostRestoredWANIPSEC", handlers.PostRestoredWANIPSEC)
 
 	mux.HandleFunc("/Wobbly", handlers.Wobbly)
-
 	mux.HandleFunc("/PostWobbly", handlers.PostWobbly)
 
 	mux.HandleFunc("/cpuAlarm", handlers.CPUAlarm)
@@ -85,6 +84,9 @@ func main() {
 
 	mux.HandleFunc("/TMobileTemplate", handlers.TMobileTemplate)
 	mux.HandleFunc("/PostTMobileTemplate", handlers.PostTMobileTemplate)
+
+	mux.HandleFunc("/WanMetrics", handlers.WanMetricsTemplate)
+	mux.HandleFunc("/PostWanMetrics", handlers.PostWanMetrics)
 
 	log.Println("Starting server on:" + portNumber)
 	log.Fatal(http.ListenAndServe(portNumber, sessionManager.LoadAndSave(mux)))
